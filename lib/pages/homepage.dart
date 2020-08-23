@@ -31,7 +31,7 @@ class Homepage extends StatelessWidget {
                 SizedBox(height: 30),
 
                 GestureDetector(
-                  onTap: ()=> print('container tapped'),
+                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => Find())),
                   child: Container(
                     height: 70,
                     width: 245,

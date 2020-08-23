@@ -1,3 +1,4 @@
+import 'package:app_multipage_comparenumbers/pages/find.dart';
 import 'package:app_multipage_comparenumbers/pages/homepage.dart';
 import 'package:flutter/material.dart';
 

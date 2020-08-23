@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'find.dart';
+
 class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class Homepage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 GestureDetector(
-                  onTap: ()=> print('container tapped'),
+                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => Find())),
                   child: Container(
                     height: 70,
                     width: 245,

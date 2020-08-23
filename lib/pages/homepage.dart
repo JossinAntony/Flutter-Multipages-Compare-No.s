@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'even_odd.dart';
 import 'find.dart';
 
 class Homepage extends StatelessWidget {
@@ -46,7 +47,7 @@ class Homepage extends StatelessWidget {
                 SizedBox(height: 30),
 
                 GestureDetector(
-                  onTap: ()=> print('container tapped'),
+                    onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => CheckEvenOdd())),
                   child: Container(
                     height: 70,
                     width: 245,

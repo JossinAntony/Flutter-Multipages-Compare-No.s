@@ -2,14 +2,27 @@
 
 import 'package:flutter/material.dart';
 
-class CheckEvenOdd extends StatelessWidget {
+class CheckEvenOdd extends StatefulWidget {
+
+  @override
+  _CheckEvenOddState createState() => _CheckEvenOddState();
+}
+
+class _CheckEvenOddState extends State<CheckEvenOdd> {
+
+  String _msg;
+  Color _color;
 
   void _checkEvenOdd(var1){
-    if((var1 % 2) == 0){
-      print('$var1 is even');
-    }else{
-      print('$var1 is odd');
-    }
+    setState(() {
+      if((var1 % 2) == 0){
+        _color = Colors.green;
+        _msg = '$var1 is even';
+      }else{
+        _color = Colors.yellow;
+        _msg = '$var1 is odd';
+      }
+    });
   }
 
   TextEditingController numCntrlr = TextEditingController();
@@ -25,6 +38,9 @@ class CheckEvenOdd extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  Text(_msg, style: TextStyle(
+                    color: _color,
+                  )),
                   TextField(
                     controller: numCntrlr,
                     decoration: InputDecoration(

@@ -60,7 +60,31 @@ class _FindLargestSmallestState extends State<FindLargestSmallest> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(_number.toString()),
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 70,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      style: BorderStyle.solid,
+                      width: 2,
+                      color: Colors.blueGrey.withOpacity(.8),
+                    ),
+                    color: Colors.lightBlue.withOpacity(.3),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                    child: Center(
+                      child: Text(_number.toString(),
+                      style: TextStyle(
+                          fontSize: 40,
+                      ),
+                      ),
+                    )
+                ),
+              ),
+
+              SizedBox(height: 30),
+              
               Row(
                 children: <Widget>[
                   Flexible(

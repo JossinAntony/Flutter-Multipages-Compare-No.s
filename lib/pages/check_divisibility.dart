@@ -2,15 +2,27 @@
 
 import 'package:flutter/material.dart';
 
-class CheckDivisibilityby8 extends StatelessWidget {
+class CheckDivisibilityby8 extends StatefulWidget {
 
-  void _checkDivisibilityBy5(var1){
-    if((var1 % 8) == 0){
-      print('$var1 divisible by 8');
-    }else{
-      print('$var1 not divisible by 8');
-    }
+  @override
+  _CheckDivisibilityby8State createState() => _CheckDivisibilityby8State();
+}
+
+class _CheckDivisibilityby8State extends State<CheckDivisibilityby8> {
+  void _checkDivisibilityBy8(var1){
+      setState(() {
+        if((var1 % 8) == 0){
+          _color = Colors.green;
+          _msg = '$var1 is divisible by 8';
+        }else{
+          _color = Colors.red;
+          _msg = '$var1 is not divisible by 8';
+        }
+      });
   }
+
+  String _msg = '';
+  Color _color;
 
   TextEditingController numCntrlr = TextEditingController();
 
@@ -25,13 +37,14 @@ class CheckDivisibilityby8 extends StatelessWidget {
           padding: EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
+              Text(this._msg),
               TextField(
                 controller: numCntrlr,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.0),
                   ),
-                  prefixIcon: Icon(Icons.filter_5),
+                  prefixIcon: Icon(Icons.filter_8),
                   hintText: 'Enter the number whose divisibility by eight has to be checked',
                 ),
               ),
@@ -40,7 +53,7 @@ class CheckDivisibilityby8 extends StatelessWidget {
 
               RaisedButton(
                 onPressed: (){
-                  _checkDivisibilityBy5(double.parse(numCntrlr.text));
+                  _checkDivisibilityBy8(double.parse(numCntrlr.text));
                 },
                 color: Colors.blueAccent,
                 child: Text('SUBMIT'),

@@ -1,10 +1,20 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class Find extends StatelessWidget {
+class FindLargestSmallest extends StatefulWidget {
+
+  @override
+  _FindLargestSmallestState createState() => _FindLargestSmallestState();
+}
+
+class _FindLargestSmallestState extends State<FindLargestSmallest> {
 
   TextEditingController num1Cntrlr = TextEditingController();
   TextEditingController num2Cntrlr = TextEditingController();
   TextEditingController num3Cntrlr = TextEditingController();
+
+  double _number = 0;
 
   double _findLargest(double var1, double var2, double var3){
     if(var1 >= var2){
@@ -50,11 +60,15 @@ class Find extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Text(_number.toString()),
               Row(
                 children: <Widget>[
                   Flexible(
                       child: TextField(
                         controller: num1Cntrlr,
+                        keyboardType: TextInputType.numberWithOptions(decimal: true),
+                        inputFormatters: [
+                          WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d{0,2}')),],
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8.0),
@@ -72,6 +86,9 @@ class Find extends StatelessWidget {
                   Flexible(
                       child: TextField(
                         controller: num2Cntrlr,
+                        keyboardType: TextInputType.numberWithOptions(decimal: true),
+                        inputFormatters: [
+                          WhitelistingTextInputFormatter(RegExp(r'^\d+\.?\d{0,2}')),],
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8.0),
@@ -110,6 +127,9 @@ class Find extends StatelessWidget {
                       height: 60,
                       child: RaisedButton(
                         onPressed: (){
+                          setState(() {
+                            _number = _findLargest(double.parse(num1Cntrlr.text), double.parse(num2Cntrlr.text), double.parse(num3Cntrlr.text));
+                          });
                           print(_findLargest(double.parse(num1Cntrlr.text), double.parse(num2Cntrlr.text), double.parse(num3Cntrlr.text)));
                         },
                         shape: RoundedRectangleBorder(
@@ -127,6 +147,9 @@ class Find extends StatelessWidget {
                       height: 60,
                       child: RaisedButton(
                         onPressed: (){
+                          setState(() {
+                            _number = _findSmallest(double.parse(num1Cntrlr.text), double.parse(num2Cntrlr.text), double.parse(num3Cntrlr.text));
+                          });
                           print(_findSmallest(double.parse(num1Cntrlr.text), double.parse(num2Cntrlr.text), double.parse(num3Cntrlr.text)));
                         },
                         shape: RoundedRectangleBorder(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'even_odd.dart';
-import 'find.dart';
+import 'package:app_multipage_comparenumbers/pages/check_divisibility.dart';
+import 'package:app_multipage_comparenumbers/pages/counter.dart';
+import 'package:app_multipage_comparenumbers/pages/even_odd.dart';
+import 'package:app_multipage_comparenumbers/pages/findLargestSmallest.dart';
 
 class Homepage extends StatelessWidget {
   @override
@@ -17,7 +19,7 @@ class Homepage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 GestureDetector(
-                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => Find())),
+                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => FindLargestSmallest())),
                   child: Container(
                     height: 70,
                     width: 245,
@@ -29,10 +31,10 @@ class Homepage extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 30),
+                SizedBox(height: 10),
 
                 GestureDetector(
-                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => Find())),
+                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => FindLargestSmallest())),
                   child: Container(
                     height: 70,
                     width: 245,
@@ -44,10 +46,10 @@ class Homepage extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 30),
+                SizedBox(height: 10),
 
                 GestureDetector(
-                    onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => CheckEvenOdd())),
+                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => CheckEvenOdd())),
                   child: Container(
                     height: 70,
                     width: 245,
@@ -59,7 +61,35 @@ class Homepage extends StatelessWidget {
                   ),
                 ),
 
+                SizedBox(height: 10),
 
+                GestureDetector(
+                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => CheckDivisibilityby8())),
+                  child: Container(
+                    height: 70,
+                    width: 245,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      gradient: LinearGradient(colors: [Color(0xffdd3e54), Color(0xff6be585),]),
+                    ),
+                    child: Center(child: Text('Test Divisibility', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
+                  ),
+                ),
+
+                SizedBox(height: 10),
+
+                GestureDetector(
+                  onTap: ()=> Navigator.of(context).push(MaterialPageRoute(builder: (context) => Counter())),
+                  child: Container(
+                    height: 70,
+                    width: 245,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      gradient: LinearGradient(colors: [Color(0xff8360c3), Color(0xff2ebf91),]),
+                    ),
+                    child: Center(child: Text('Counter', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
+                  ),
+                ),
 
               ],
             ),

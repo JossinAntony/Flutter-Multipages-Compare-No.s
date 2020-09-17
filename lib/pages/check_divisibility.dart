@@ -28,12 +28,7 @@ class _CheckDivisibilityby8State extends State<CheckDivisibilityby8> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Divisibility by 8'),
-        ),
-        body: Container(
+    return Container(
           padding: EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
@@ -86,8 +81,6 @@ class _CheckDivisibilityby8State extends State<CheckDivisibilityby8> {
               ),
             ],
           ),
-        )
-      )
-    );
+        );
   }
 }

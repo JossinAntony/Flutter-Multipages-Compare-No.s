@@ -50,12 +50,7 @@ class _FindLargestSmallestState extends State<FindLargestSmallest> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Find..'),
-        ),
-        body: Container(
+    return Container(
           padding: EdgeInsets.only(left:10, right: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -190,8 +185,6 @@ class _FindLargestSmallestState extends State<FindLargestSmallest> {
 
             ],
           ),
-        )
-      )
-    );
+        );
   }
 }

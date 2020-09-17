@@ -29,12 +29,7 @@ class _CheckEvenOddState extends State<CheckEvenOdd> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text('Check Even/ Odd'),
-            ),
-            body: Container(
+    return Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -97,8 +92,6 @@ class _CheckEvenOddState extends State<CheckEvenOdd> {
                   ),
                 ],
               ),
-            )
-        )
-    );
+            );
   }
 }

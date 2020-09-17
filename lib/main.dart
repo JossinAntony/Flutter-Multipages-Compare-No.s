@@ -27,6 +27,40 @@ class _MyAppState extends State<MyApp> {
             title: Text('OPERATIONS'),
           ),
         body: pages[_pageIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.blue,
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.black38,
+            currentIndex: _pageIndex,
+            onTap: (int index){
+            setState(() {
+              _pageIndex = index;
+            });
+            },
+            items: [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.code),
+                title: Text('Compare No.s')
+              ),
+
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.donut_small),
+                  title: Text('Check Evenness')
+              ),
+
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.timeline),
+                  title: Text('Divisibility by 8')
+              ),
+
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.add_circle),
+                  title: Text('Counter')
+              ),
+
+            ]
+        ),
         ),
     );
   }
